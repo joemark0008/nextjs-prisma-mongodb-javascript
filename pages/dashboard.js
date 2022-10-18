@@ -3,7 +3,11 @@ import { signOut, useSession, getSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import NavBar from '../components/NavBar'
 
+
 const DashBoard = () => {
+
+
+    
     const router = useRouter()
     const { data: session, status } = useSession({
         required: true,
@@ -17,13 +21,10 @@ const DashBoard = () => {
         return "Loading"
     }
 
-    console.log(session)
 
     return (
         <>
             <NavBar />
-
-
             <section className="py-10 bg-gray-50 max-w-screen-lg mx-auto">
                 <div className="container px-4 mx-auto">
                     <div className="flex flex-wrap items-center -mx-4">
