@@ -1,4 +1,4 @@
-import prisma from '../../lib/prismadb'
+import prisma from '../lib/prismadb'
 
 // READ
 export const getAllUsers = async () => {
@@ -6,7 +6,8 @@ export const getAllUsers = async () => {
     return users
 }
 
-export const getUser = async id => {
+export const getUser = async (id) => {
+    
     const user = await prisma.user.findUnique({
         where: { id }
     })

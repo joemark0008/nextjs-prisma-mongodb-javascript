@@ -5,12 +5,14 @@ import {
     getAllUsers,
     getUser,
     updateUser
-} from '../../prisma/helper/user'
+} from '../../controller/user'
 
 export default async function handle(req, res) {
-    // console.log(req)
+    console.log(req)
     try {
         switch (req.method) {
+
+        
             case 'GET': {
                 if (req.query.id) {
                     // Get a single user if id is provided is the query
