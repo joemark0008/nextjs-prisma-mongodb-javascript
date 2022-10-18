@@ -24,6 +24,18 @@ export const authOptions = {
         })
     ],
     secret: process.env.JWT_SECRET,
+    callbacks: {
+        async session({ session, token, user }) {
+            // Send properties to the client, like an access_token and user id from a provider.
+            session.user.id = user.id
+            session.user.role = user.role
+            session.user.emailVerified = user.emailVerified
+
+            return session
+        },
+    
+    },
+
 }
 
 export default NextAuth(authOptions)
