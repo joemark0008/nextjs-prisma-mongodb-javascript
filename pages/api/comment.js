@@ -1,5 +1,6 @@
-import { createComment, createPost, getAllPosts, getPost } from "../../controller/post";
+
 import { unstable_getServerSession } from "next-auth/next"
+import { createComment } from "../../controller/comment"
 import { authOptions } from "./auth/[...nextauth]"
 
 export default async function handler(req, res) {

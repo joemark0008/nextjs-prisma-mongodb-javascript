@@ -9,29 +9,6 @@ export const createPost = async (payload) => {
     return post
 }
 
-export const createComment = async () => {
-    const post = await prisma.post.update({
-        where: {
-            id: "634e459a0d221d5f9dbf5088"
-        },
-
-        data: {
-            title: "hahaha",
-            description: "asdasd",
-            comments: {
-                create: {
-                    title: "asdas"
-                }
-            }
-        },
-        include: {
-            comments: true, // Include all posts in the returned object
-        },
-
-    })
-    return post
-}
-
 
 
 // GET
